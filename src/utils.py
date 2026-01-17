@@ -39,8 +39,8 @@ def evaluate_models(X_train, y_train, X_test, y_test, models, param):
             model = list(models.values())[i]
             para = param[list(models.keys())[i]]
 
-            gs = GridSearchCV(model, para, cv=3)
-            gs.fit(X_train, y_train)
+            gs = GridSearchCV(model, para, cv=3) #grid search cv object - how many times cross validation should be done
+            gs.fit(X_train, y_train) #train model with best params
 
             model.set_params(**gs.best_params_)
             model.fit(X_train, y_train)

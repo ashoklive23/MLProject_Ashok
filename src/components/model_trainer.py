@@ -85,6 +85,8 @@ class ModelTrainer:
                 }
                 
             }
+            model_report:dict=evaluate_models(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,
+                                             models=models,param=params)
         except Exception as e:
             raise CustomException(e,sys)
         
@@ -95,3 +97,5 @@ class ModelTrainer:
         # Ella 144 models try pannum
         # Test score calculate pannum
         # Best combination return pannum
+        
+    
